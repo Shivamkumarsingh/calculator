@@ -32,4 +32,10 @@ class StringCalculatorTest < Minitest::Test
   def test_custom_delimiter
     assert_equal 3, add("//;\n1;2")
   end
+
+  # Handle Negative numbers in argument"
+  def test_negative_numbers_raise_exception
+    error = assert_raises(RuntimeError) { add("1,-2,3,-4") }
+    assert_equal "Negative numbers not allowed: -2, -4", error.message
+  end
 end

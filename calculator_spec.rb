@@ -17,4 +17,9 @@ class StringCalculatorTest < Minitest::Test
   def test_two_numbers_return_sum
     assert_equal 6, add("1,5")
   end
+
+  #Handle Multiple numbers"
+  def test_multiple_numbers_return_sum
+    assert_equal 10, add("1,2,3,4")
+  end
 end

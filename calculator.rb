@@ -1,5 +1,9 @@
 def add(numbers)
   return 0 if numbers.empty?
-  numbers.split(/,|\n/).sum(&:to_i)
+  if numbers.start_with?("//")
+    delimiter, numbers = numbers[2..].split("\n")
+    numbers.split(delimiter).sum(&:to_i)
+  else
+    numbers.split(/,|\n/).sum(&:to_i)
+  end
 end
-

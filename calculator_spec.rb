@@ -12,4 +12,9 @@ class StringCalculatorTest < Minitest::Test
   def test_single_number_returns_number
     assert_equal 5, add("5")
   end
+
+  # Handle Two numbers"
+  def test_two_numbers_return_sum
+    assert_equal 6, add("1,5")
+  end
 end
